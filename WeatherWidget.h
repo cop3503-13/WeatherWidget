@@ -5,7 +5,7 @@
 #ifndef WIDGET_WEATHERWIDGET_H
 #define WIDGET_WEATHERWIDGET_H
 #include <string>
-#include "widget.h"
+#include "Widget.h"
 #include "include/json.hpp"
 
 class WeatherWidget : public Widget {
