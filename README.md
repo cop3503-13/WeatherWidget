@@ -1,5 +1,9 @@
 # Widget base class
-
+This class is just a header file.
+The virtual functions any child class needs to use (at the moment - might be changed from return types of std::string to json) are:
+* `void configure()`
+* `std::string refreshData()`
+* `std::string getConfiguration()`
 # Weather Widget
 This uses David's httprequest class and the new JSON library
 
