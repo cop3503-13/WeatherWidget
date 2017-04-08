@@ -43,6 +43,8 @@ public:
         time_t elapsed = time(0) - lastRefreshed;
         if (elapsed > getRefreshInterval())
         {
+	    //set last refreshed to now
+            setLastRefreshed(time(0));
             return refreshData();
         }
     }
