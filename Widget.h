@@ -5,6 +5,7 @@
 
 #include <string>
 #include <iostream>
+#include "include/json.hpp"
 
 
 class Widget {
@@ -15,7 +16,11 @@ private:
 public:
     virtual void configure() = 0;
 
+    //returns string representation of the json configuration
     virtual std::string getConfiguration() = 0;
+
+    //returns json configuration
+    virtual nlohmann::json getConfigurationJson() = 0;
 
     virtual std::string refreshData() = 0;
 
