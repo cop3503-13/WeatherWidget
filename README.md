@@ -1,9 +1,23 @@
 # Widget base class
 This class is just a header file.
+## Virtual methods in abstract Widget
 The virtual functions any child class needs to use (at the moment - might be changed from return types of std::string to json) are:
-* `void configure()`
-* `std::string refreshData()`
-* `std::string getConfiguration()`
+* **`void configure()`**
+  * This method should prompt the user for choices to configure what they want the Widget to do (e.g. set the zipcode, set the stock choice)
+* **`std::string refreshData()`**
+  * This method should contain the code to update the data intended to be displayed (typically through an api call with the `httprequest` class)
+* **`std::string getConfiguration()`**
+  * This method should return the json string containing the configuration choices for the Widget
+  * example return for WeatherWidget: 
+    ```js
+    {
+         "name": "Weather",
+         "configuration": {
+             "zip": #####,
+             "refreshInterval": ###  //(in seconds)
+         }
+    }
+    ```
 # Weather Widget
 This uses David's httprequest class and the new JSON library
 
