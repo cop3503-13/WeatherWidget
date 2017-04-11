@@ -2,11 +2,11 @@
 This class is just a header file.
 ## Virtual methods in abstract Widget
 The virtual functions any child class needs to use (at the moment - might be changed from return types of std::string to json) are:
-* **`void configure()`**
+* **`virtual void configure()`**
   * This method should prompt the user for choices to configure what they want the Widget to do (e.g. set the zipcode, set the stock choice)
-* **`std::string refreshData()`**
+* **`virtual std::string refreshData()`**
   * This method should contain the code to update the data intended to be displayed (typically through an api call with the `httprequest` class)
-* **`std::string getConfiguration()`**
+* **`virtual std::string getConfiguration()`**
   * This method should return the json string containing the configuration choices for the Widget
   * example return for WeatherWidget: 
     ```js
@@ -18,6 +18,8 @@ The virtual functions any child class needs to use (at the moment - might be cha
          }
     }
     ```
+* **`virtual nlohmann::json getConfigurationJson()`**
+  * This method returns the `nlohmann::json` configuration choices for the Widget
 # Weather Widget
 This uses David's httprequest class and the new JSON library
 
