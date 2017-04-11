@@ -14,6 +14,8 @@ private:
     time_t refreshInterval = 0;
 
 public:
+    //configure method prompts the user for
+    //input to choose the Widget selections
     virtual void configure() = 0;
 
     //returns string representation of the json configuration
